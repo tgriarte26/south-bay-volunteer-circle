@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 function SignInModal({ isOpen, onClose }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [formData, setFormData] = useState({ email: '', message: '' });
   const [isHovered, setIsHovered] = useState(false);
 
   const handleChange = (e) => {
@@ -17,7 +16,7 @@ function SignInModal({ isOpen, onClose }) {
     e.preventDefault();
     console.log('Email:', email);
     console.log('Password:', password);
-    onClose(); // Close modal after submission
+    onClose();
   };
 
   return (
