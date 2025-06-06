@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function SloganSection() {
   return (
@@ -13,8 +14,12 @@ function SloganSection() {
           </p>
         </div>
         <div className="center-buttons">
-          <a className="for-volunteers" href="#"><button>Become a Volunteer</button></a>
-          <a className="for-organizations" href="#"><button>Become a Partner</button></a>
+          <Link className="for-volunteers" to="/volunteer">
+            <button>Become a Volunteer</button>
+          </Link>
+          <Link className="for-organizations" to="/partners">
+            <button>Become a Partner</button>
+          </Link>
         </div>
       </div>
     </section>

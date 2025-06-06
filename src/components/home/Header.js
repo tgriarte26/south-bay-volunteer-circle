@@ -9,8 +9,8 @@ function Header() {
           <input type="text" placeholder="Search..." className="search-input" />
         </div>
         <div className="header-buttons">
-          <a className="sign-in" href="#"><button>Sign In</button></a>
-          <a className="donate" href="#"><button>Donate</button></a>
+          <a className="sign-in" target="_blank" href="https://www.youtube.com/"><button>Sign In</button></a>
+          <a className="donate" target="_blank" href="https://www.youtube.com/"><button>Donate</button></a>
         </div>
       </div>
     </header>
