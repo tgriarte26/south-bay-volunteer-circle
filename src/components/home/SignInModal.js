@@ -5,11 +5,6 @@ function SignInModal({ isOpen, onClose }) {
   const [password, setPassword] = useState('');
   const [isHovered, setIsHovered] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
-
   if (!isOpen) return null;
 
   const handleSubmit = (e) => {
