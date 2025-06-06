@@ -1,15 +1,16 @@
-// Example logos — replace these with your real image URLs or import statements
 const partners = [
   {
     name: 'United States Youth Volleyball League',
-    logo: "../images/usyvl.png", // 🖼 Replace with your actual logo path
+    logo: "../images/usyvl.png",
+    link: "https://www.usyvl.org/",
   },
   {
     name: 'STEMForOthers',
     logo: "../images/stemforothers.png",
+    link: "https://www.stemforothers.org/",
   },
-  // Add more partners here
 ];
+
 
 function PartnersPage() {
   return (
@@ -41,17 +42,22 @@ function PartnersPage() {
       {/* Logos section */}
       <div className="text-center p-6 max-w-5xl w-full">
         <h2 className="text-xl font-bold text-[#5372f0] mb-4">Our Partners</h2>
-
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 items-center justify-items-center">
           {partners.map((partner, index) => (
-            <div key={index} className="flex flex-col items-center">
+            <a
+              key={index}
+              href={partner.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center hover:opacity-80 transition-opacity"
+            >
               <img
                 src={partner.logo}
                 alt={partner.name}
                 className="h-24 object-contain mb-2"
               />
               <p className="text-sm font-medium text-gray-700 text-center">{partner.name}</p>
-            </div>
+            </a>
           ))}
         </div>
       </div>

@@ -51,7 +51,7 @@ function ContactUsPage() {
             value={formData.email}
             onChange={handleChange}
             placeholder="you@example.com"
-            className="w-full px-4 py-3 border-3 border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-[#5372f0]"
+            className="w-full px-4 py-3 border-3 border-gray-300 rounded-lg focus:outline-none focus:ring-1 focus:ring-gray-300"
             style={{ paddingLeft: '0.5rem' }}
           />
         </div>
@@ -71,7 +71,7 @@ function ContactUsPage() {
             onChange={handleChange}
             placeholder="Type your message here..."
             rows="6"
-            className="w-full px-4 py-3 border-3 border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-1 focus:ring-[#5372f0]"
+            className="w-full px-4 py-3 border-3 border-gray-300 rounded-lg resize-none focus:outline-none focus:ring-1 focus:ring-gray-300"
             style={{ padding: '0.5rem' }}
           ></textarea>
         </div>

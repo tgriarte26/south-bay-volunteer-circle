@@ -13,18 +13,7 @@ const NewFilter = () => {
       focusArea: ["Education", "Youth"],
       type: ["One-time"],
       image: "../images/usyvl.png",
-    },
-    {
-      id: "stem-president",
-      title: "Chapter President",
-      organization: "STEMforOthers",
-      location: ["San Jose"],
-      major: ["Sports Medicine"],
-      focusArea: ["Education", "Youth"],
-      type: ["One-time"],
-      image: "../images/stemforothers.png",
-    },
-    // Add more...
+    }
   ];
 
   const [filters, setFilters] = useState({

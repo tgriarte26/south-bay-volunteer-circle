@@ -15,6 +15,7 @@ const allOpportunities = [
     datePosted: "June 3, 2025"
   },
   {
+    /*
     id: "stem-president",
     title: "Chapter President",
     organization: "STEMforOthers",
@@ -26,6 +27,7 @@ const allOpportunities = [
     image: "/images/stemforothers.png",
     description: "Lead and manage a STEMforOthers chapter to encourage youth in STEM careers.",
     datePosted: "June 3, 2025"
+    */
   },
 ];
 
