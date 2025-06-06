@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { FaMapMarkerAlt, FaUserGraduate, FaLayerGroup, FaCalendarAlt } from "react-icons/fa";
 
 const allOpportunities = [
   {

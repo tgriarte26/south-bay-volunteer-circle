@@ -1,6 +1,3 @@
-import React from 'react';
-import Header from '../components/home/Header';
-import Navbar from '../components/layout/Navbar';
 import MissionSection from '../components/home/MissionSection';
 import ImpactSection from '../components/home/ImpactSection';
 import SloganSection from '../components/home/SloganSection'

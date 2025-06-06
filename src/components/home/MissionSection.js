@@ -1,5 +1,3 @@
-import React from 'react';
-
 function MissionSection() {
   return ( 
   <section className="mission-section">

@@ -1,5 +1,3 @@
-import React from 'react';
-
 // Example logos — replace these with your real image URLs or import statements
 const partners = [
   {

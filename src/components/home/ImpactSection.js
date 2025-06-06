@@ -1,4 +1,3 @@
-import React from 'react';
 import ImpactStats from './ImpactStats'; // adjust path if needed
 
 function ImpactSection() {

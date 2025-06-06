@@ -1,10 +1,5 @@
-import React from 'react';
 import '../styles/styles.css';
 import '../styles/styles-cards.css';
-import Header from '../components/home/Header';
-import Navbar from '../components/layout/Navbar.js';
-import HomePage from '../pages/HomePage';
-import Filter from "../components/ui/Filter.js";
 import NewFilter from "../components/ui/NewFilter.js"
 
 function VolunteerPage() {

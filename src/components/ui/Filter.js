@@ -1,5 +1,3 @@
-import React from "react";
-
 const Filter = () => {
   return (
     <div className="bg-white p-6 rounded-2xl border shadow-lg w-full max-w-6xl mx-auto mt-8">
