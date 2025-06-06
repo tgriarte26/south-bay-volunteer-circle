@@ -57,7 +57,7 @@ const OpportunityDetail = () => {
           <h1 className="text-3xl sm:text-4xl font-bold text-gray-800">{opportunity.title}</h1>
           <h2 className="text-2xl text-gray-600 mt-1 mb-4">{opportunity.organization}</h2>
           <div className="flex justify-center items-center my-6">
-          <a className="want-to-help" href="#"><button>I Want To Help</button></a>
+          <a className="want-to-help" target="_blank" rel="noreferrer" href="https://www.youtube.com/"><button>I Want To Help</button></a>
         </div>
 
           

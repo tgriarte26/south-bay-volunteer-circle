@@ -1,17 +1,5 @@
 import { useState } from 'react';
 
-// Example logos — replace these with your real image URLs or import statements
-const partners = [
-  {
-    name: 'United States Youth Volleyball League',
-    logo: "../images/usyvl.png",
-  },
-  {
-    name: 'STEMForOthers',
-    logo: "../images/stemforothers.png",
-  },
-];
-
 function AboutPage() {
   const [openIndex, setOpenIndex] = useState(null);
 
