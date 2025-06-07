@@ -1,29 +1,58 @@
 import { useState } from 'react';
 
-function SignInModal({ isOpen, onClose, onOpenSignUp }) {
+function SignUpModal({ isOpen, onClose, onOpenSignIn }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [name, setName] = useState('');
   const [isHovered, setIsHovered] = useState(false);
 
   if (!isOpen) return null;
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (password !== confirmPassword) {
+      alert("Passwords do not match!");
+      return;
+    }
+
+    console.log('Name:', name);
     console.log('Email:', email);
     console.log('Password:', password);
     onClose();
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-      <div className="bg-white p-8 rounded-xl w-full max-w-md shadow-xl relative" style={{ padding: '2rem' }}>
-        <button onClick={onClose} className="absolute top-3 right-4 text-black-800 hover:text-black-500 text-2xl">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center"
+      style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+    >
+      <div
+        className="bg-white p-8 rounded-xl w-full max-w-md shadow-xl relative"
+        style={{ padding: '2rem' }}
+      >
+        <button
+          onClick={onClose}
+          className="absolute top-3 right-4 text-black-800 hover:text-black-500 text-2xl"
+        >
           &times;
         </button>
 
-        <h2 className="text-3xl font-bold text-[#5372f0] mb-6 text-center">Sign In</h2>
+        <h2 className="text-3xl font-bold text-[#5372f0] mb-6 text-center">Sign Up</h2>
 
         <form onSubmit={handleSubmit} className="space-y-5">
+          <div style={{ margin: '1rem 0' }}>
+            <label className="block font-semibold mb-1 text-black-800">Name</label>
+            <input
+              type="text"
+              required
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full px-4 py-2 border-2 border-[#5372f0] rounded-md focus:ring-2 focus:ring-[#5372f0] outline-none"
+            />
+          </div>
+
           <div style={{ margin: '1rem 0' }}>
             <label className="block font-semibold mb-1 text-black-800">Email</label>
             <input
@@ -34,6 +63,7 @@ function SignInModal({ isOpen, onClose, onOpenSignUp }) {
               className="w-full px-4 py-2 border-2 border-[#5372f0] rounded-md focus:ring-2 focus:ring-[#5372f0] outline-none"
             />
           </div>
+
           <div style={{ margin: '1rem 0' }}>
             <label className="block font-semibold mb-1 text-black-800">Password</label>
             <input
@@ -44,6 +74,18 @@ function SignInModal({ isOpen, onClose, onOpenSignUp }) {
               className="w-full px-4 py-2 border-2 border-[#5372f0] rounded-md focus:ring-2 focus:ring-[#5372f0] outline-none"
             />
           </div>
+
+          <div style={{ margin: '1rem 0' }}>
+            <label className="block font-semibold mb-1 text-black-800">Confirm Password</label>
+            <input
+              type="password"
+              required
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="w-full px-4 py-2 border-2 border-[#5372f0] rounded-md focus:ring-2 focus:ring-[#5372f0] outline-none"
+            />
+          </div>
+
           <button
             type="submit"
             onMouseEnter={() => setIsHovered(true)}
@@ -60,18 +102,25 @@ function SignInModal({ isOpen, onClose, onOpenSignUp }) {
               cursor: 'pointer',
             }}
           >
-            Sign In
+            Sign Up
           </button>
         </form>
 
         <p className="mt-6 text-center text-gray-700">
-          Have you signed up?{' '}
+          Already have an account?{' '}
           <span
-            onClick={onOpenSignUp}
+            onClick={() => {
+              onClose();
+              onOpenSignIn();
+            }}
             className="font-semibold hover:underline cursor-pointer"
-            style={{ color: '#5372f0', fontWeight: 800 }}
+            style={{
+              color: '#5372f0',
+              fontWeight: 800,
+              padding: 0,
+            }}
           >
-            Sign Up
+            Sign In
           </span>
         </p>
       </div>
@@ -79,4 +128,4 @@ function SignInModal({ isOpen, onClose, onOpenSignUp }) {
   );
 }
 
-export default SignInModal;
+export default SignUpModal;
