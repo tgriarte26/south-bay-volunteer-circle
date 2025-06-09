@@ -13,9 +13,9 @@ import OpportunityDetail from './pages/OpportunityDetail';
 import ProtectedVolunteerPage from './components/home/ProtectedVolunteerPage';
 import SignInModal from './components/home/SignInModal';
 import SignUpModal from './components/home/SignUpModal';
-import { AuthProvider, useAuth } from './components/utils/AuthContext'; // ✅
+import { AuthProvider, useAuth } from './components/utils/AuthContext';
 
-function AppRoutes({ showSignIn, setShowSignIn }) {
+function AppRoutes({ setShowSignIn }) {
   const { user } = useAuth();
 
   return (
@@ -50,7 +50,7 @@ function App() {
   return (
     <AuthProvider>
       <Router>
-        {/* Modals rendered globally */}
+        {/* Sign-In Modal */}
         <SignInModal
           isOpen={showSignIn}
           onClose={() => setShowSignIn(false)}
@@ -59,6 +59,8 @@ function App() {
             setShowSignUp(true);
           }}
         />
+
+        {/* Sign-Up Modal */}
         <SignUpModal
           isOpen={showSignUp}
           onClose={() => setShowSignUp(false)}
@@ -68,8 +70,8 @@ function App() {
           }}
         />
 
-        {/* Routes */}
-        <AppRoutes showSignIn={showSignIn} setShowSignIn={setShowSignIn} />
+        {/* App Routes */}
+        <AppRoutes setShowSignIn={setShowSignIn} />
       </Router>
     </AuthProvider>
   );
