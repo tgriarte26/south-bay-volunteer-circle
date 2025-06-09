@@ -1,25 +1,45 @@
 import { useState } from 'react';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from './firebase'; // ✅ Adjust path as needed
 
-function SignInModal({ isOpen, onClose, onOpenSignUp }) {
+function SignInModal({ isOpen, onClose, onOpenSignUp, disableClose = false }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isHovered, setIsHovered] = useState(false);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
-    onClose();
+
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log('Signed in user:', userCredential.user);
+      onClose(); // Close modal on success
+    } catch (error) {
+      alert(error.message);
+      console.error('Login failed:', error);
+    }
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
-      <div className="bg-white p-8 rounded-xl w-full max-w-md shadow-xl relative" style={{ padding: '2rem' }}>
-        <button onClick={onClose} className="absolute top-3 right-4 text-black-800 hover:text-black-500 text-2xl">
-          &times;
-        </button>
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center"
+      style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
+    >
+      <div
+        className="bg-white p-8 rounded-xl w-full max-w-md shadow-xl relative"
+        style={{ padding: '2rem' }}
+      >
+        {/* ❌ Hide close button if disableClose is true */}
+        {!disableClose && (
+          <button
+            onClick={onClose}
+            className="absolute top-3 right-4 text-black-800 hover:text-black-500 text-2xl"
+          >
+            &times;
+          </button>
+        )}
 
         <h2 className="text-3xl font-bold text-[#5372f0] mb-6 text-center">Sign In</h2>
 
