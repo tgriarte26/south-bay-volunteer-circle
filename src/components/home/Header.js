@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../utils/AuthContext';
 import { signOut } from 'firebase/auth';
-import { auth } from './firebase'; // Adjust if needed
+import { auth } from './firebase';
+import { NavLink } from 'react-router-dom';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react';
 import { ChevronDown } from 'lucide-react';
 
@@ -46,8 +47,13 @@ function Header({ openSignIn }) {
   return (
     <header className="top-header">
       <div className="top-bar">
-        <img className="logo" src="/images/Volunteer.png" alt="logo" />
-
+        <img
+          className="logo"
+          src="/images/Volunteer.png"
+          alt="logo"
+          style={{ cursor: 'pointer' }}
+          onClick={() => navigate('/')}
+        />
         <div className="search-container">
           <input
             type="text"
