@@ -3,22 +3,48 @@ import { useState } from 'react';
 function AboutPage() {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const faqs = [
-    {
-      question: "Who can join South Bay Volunteer Circle?",
-      answer:
-        "Any high school student in the South Bay area who is looking to make a positive impact in their community through volunteering or internships.",
-    },
-    {
-      question: "How do I find opportunities?",
-      answer:
-        "You can browse our website for categorized volunteer and internship opportunities based on location, focus area, and major.",
-    },
-    {
-      question: "Is there a cost to join?",
-      answer: "No, South Bay Volunteer Circle is completely free for all students.",
-    },
-  ];
+const faqs = [
+  {
+    question: "Who can join South Bay Volunteer Circle?",
+    answer: (
+      <>
+        Any <strong>high school student</strong> in the South Bay area who is looking to make a positive impact in their community through volunteering or internships.
+      </>
+    ),
+  },
+  {
+    question: "How do I find opportunities?",
+    answer: (
+      <>
+        You can browse the <strong>'Volunteer' tab</strong> for categorized volunteer and internship opportunities based on location, focus area, and major. Sign in for free to access it.
+      </>
+    ),
+  },
+  {
+    question: "Is there a cost to join?",
+    answer: (
+      <>
+        No, <strong>South Bay Volunteer Circle</strong> is completely free for all students.
+      </>
+    ),
+  },
+  {
+    question: "How do I know if an opportunity is safe or legitimate?",
+    answer: (
+      <>
+        We review each opportunity before posting. Still, we encourage students and parents to <strong>research organizations and reach out with questions</strong> before committing.
+      </>
+    ),
+  },
+  {
+    question: "How often is the site updated with new opportunities?",
+    answer: (
+      <>
+        We update the site weekly to include the latest opportunities available to students. <strong>Last updated: June 9, 2025</strong>
+      </>
+    ),
+  },
+];
 
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);

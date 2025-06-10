@@ -7,6 +7,7 @@ import PartnersPage from './pages/PartnersPage';
 import AboutPage from './pages/AboutPage';
 import ContactUsPage from './pages/ContactUsPage';
 import SearchResultsPage from './pages/SearchResultsPage';
+import AccountPage from './pages/AccountPage';
 import NewFilter from './components/ui/NewFilter';
 import OpportunityDetail from './pages/OpportunityDetail';
 
@@ -36,8 +37,10 @@ function AppRoutes({ setShowSignIn }) {
         <Route path="about" element={<AboutPage />} />
         <Route path="contact" element={<ContactUsPage />} />
         <Route path="/search" element={<SearchResultsPage />} />
+        <Route path="account" element={<AccountPage />} />
         <Route path="filter" element={<NewFilter />} />
         <Route path="opportunity/:id" element={<OpportunityDetail />} />
+        
       </Route>
     </Routes>
   );

@@ -90,7 +90,7 @@ const NewFilter = () => {
           </label>
           <div className="space-y-2">
             {["Biology","Business","Communications","Computer Science","Engineering","Environmental Science",
-            "Kinesiology","Nursing","Political Science","Psychology","Public Health","Social Work"
+            "Kinesiology","Nursing","Political Science","Psychology","Public Health","Social Work", "Sports Medicine"
             ].map((major) => (
               <div key={major} className="flex items-center">
                 <input
@@ -107,7 +107,6 @@ const NewFilter = () => {
               </div>
             ))}
           </div>
-
 
           {/* Focus Area Filter */}
           <label className="block text-lg font-bold mb-2 text-gray-700 mt-6">Focus Area</label>

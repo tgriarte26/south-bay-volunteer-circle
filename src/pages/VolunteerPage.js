@@ -10,7 +10,7 @@ function VolunteerPage() {
           <div className="slogan-text">
             <h2><b>Make a Difference in the South Bay.</b></h2>
             <p>
-            Find meaningful volunteer opportunities that match your interests, skills, and schedule.
+            Find meaningful volunteer and internship opportunities that match your interests, skills, and schedule.
             </p>
           </div>
         </div>
