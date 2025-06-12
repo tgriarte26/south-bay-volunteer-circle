@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/layout/Layout';
 import HomePage from './pages/HomePage';
@@ -49,6 +49,23 @@ function AppRoutes({ setShowSignIn }) {
 function App() {
   const [showSignIn, setShowSignIn] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile(); // Check on mount
+    window.addEventListener('resize', checkMobile); // Update on resize
+    return () => window.removeEventListener('resize', checkMobile); // Cleanup
+  }, []);
+
+  if (isMobile) {
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <h1>Sorry, this website is not accessible on mobile devices yet.</h1>
+        <p>Please use a desktop or tablet for the best experience. Thank you.</p>
+      </div>
+    );
+  }
 
   return (
     <AuthProvider>
