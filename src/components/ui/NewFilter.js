@@ -90,7 +90,7 @@ const NewFilter = () => {
           </label>
           <div className="space-y-2">
             {["Biology","Business","Communications","Computer Science","Engineering","Environmental Science",
-            "Kinesiology","Nursing","Political Science","Psychology","Public Health","Social Work", "Sports Medicine"
+            "Kinesiology","Nursing","Political Science","Psychology", "Sports Medicine"
             ].map((major) => (
               <div key={major} className="flex items-center">
                 <input
@@ -98,7 +98,7 @@ const NewFilter = () => {
                   id={major}
                   value={major}
                   checked={filters.major.includes(major)}
-                  onChange={() => handleCheckboxChange("major", major)} // ✅ hook up the handler
+                  onChange={() => handleCheckboxChange("major", major)}
                   className="checkbox-spacing"
                 />
                 <label htmlFor={major} className="text-gray-700 ml-2">
@@ -111,7 +111,9 @@ const NewFilter = () => {
           {/* Focus Area Filter */}
           <label className="block text-lg font-bold mb-2 text-gray-700 mt-6">Focus Area</label>
           <div className="space-y-2">
-            {["Education", "Environment", "Health", "Youth"].map((area) => (
+            {["Animals", "Arts & Culture", "Children & Youth", "Community", "Education", "Health & Medicine", "Hunger", 
+            "International", "Media & Broadcasting", "People With Disabilities", "Seniors", "Sports & Recreation", 
+            "Technology", "Veterans & Military Families" ].map((area) => (
               <div key={area} className="flex items-center">
                 <input
                   type="checkbox"
