@@ -6,29 +6,31 @@ const allOpportunities = [
     id: "volunteer-coach",
     title: "High School Volunteer Coach",
     organization: "United States Youth Volleyball League",
-    location: ["Torrance", "Manhattan Beach"],
+    location: ["Torrance"],
     address: "1601 Manhattan Beach Blvd, Manhattan Beach, CA 90266",
     major: ["Sports Medicine"],
     focusArea: ["Education", "Youth"],
-    type: ["One-time"],
+    type: ["Recurring"],
     image: "/images/usyvl.png",
     description: "Help coach youth volleyball and inspire the next generation of athletes!",
+    requirements: "Must be 18 years old",
     datePosted: "June 3, 2025"
   },
   {
-    /*
+
     id: "stem-president",
     title: "Chapter President",
     organization: "STEMforOthers",
     location: ["San Jose"],
     address: "1234 STEM Street, San Jose, CA 95112",
-    major: ["Sports Medicine"],
+    major: ["Computer Science"],
     focusArea: ["Education", "Youth"],
-    type: ["One-time"],
+    type: ["Recurring"],
     image: "/images/stemforothers.png",
     description: "Lead and manage a STEMforOthers chapter to encourage youth in STEM careers.",
+    requirements: "Must be 18 years old",
     datePosted: "June 3, 2025"
-    */
+
   },
 ];
 
@@ -72,6 +74,10 @@ const OpportunityDetail = () => {
               <h3 className="font-bold text-3xl mb-5 text-[#5372f0] underline decoration-[#5372f0] decoration-2 underline-offset-4" style={{marginTop: '1rem'}}>Description</h3>
               <p className="text-base font-bold text-gray-700 leading-relaxed" style={{padding: '0 1rem'}}>
                 {opportunity.description}
+              </p>
+              <h3 className="font-bold text-3xl mb-5 text-[#5372f0] underline decoration-[#5372f0] decoration-2 underline-offset-4" style={{marginTop: '1rem'}}>Requirements</h3>
+              <p className="text-base font-bold text-gray-700 leading-relaxed" style={{padding: '0 1rem'}}>
+                {opportunity.requirements}
               </p>
             </div>
 

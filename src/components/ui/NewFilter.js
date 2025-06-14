@@ -3,18 +3,38 @@ import { CircleArrowRight } from 'lucide-react';
 import { Link } from "react-router-dom";
 
 const NewFilter = () => {
-  const allOpportunities = [
-    {
-      id: "volunteer-coach",
-      title: "High School Volunteer Coach",
-      organization: "United States Youth Volleyball League",
-      location: ["Torrance", "Manhattan Beach"],
-      major: ["Sports Medicine"],
-      focusArea: ["Education", "Youth"],
-      type: ["One-time"],
-      image: "../images/usyvl.png",
-    }
-  ];
+const allOpportunities = [
+  {
+    id: "volunteer-coach",
+    title: "High School Volunteer Coach",
+    organization: "United States Youth Volleyball League",
+    location: ["Torrance"],
+    address: "1601 Manhattan Beach Blvd, Manhattan Beach, CA 90266",
+    major: ["Sports Medicine"],
+    focusArea: ["Education", "Youth"],
+    type: ["Recurring"],
+    image: "/images/usyvl.png",
+    description: "Help coach youth volleyball and inspire the next generation of athletes!",
+    requirements: "Must be 18 years old",
+    datePosted: "June 3, 2025"
+  },
+  {
+
+    id: "stem-president",
+    title: "Chapter President",
+    organization: "STEMforOthers",
+    location: ["San Jose"],
+    address: "1234 STEM Street, San Jose, CA 95112",
+    major: ["Computer Science"],
+    focusArea: ["Education", "Youth"],
+    type: ["Recurring"],
+    image: "/images/stemforothers.png",
+    description: "Lead and manage a STEMforOthers chapter to encourage youth in STEM careers.",
+    requirements: "Must be 18 years old",
+    datePosted: "June 3, 2025"
+
+  },
+];
 
   const [filters, setFilters] = useState({
     location: [],
@@ -194,14 +214,14 @@ const NewFilter = () => {
                 <div className="flex flex-col justify-center gap-3 pr-6 flex-1">
                   <div className="flex flex-wrap gap-2">
                     {opportunity.focusArea.map((tag, i) => (
-                      <span key={i} className="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full min-w-[120px] text-center flex justify-center items-center">
+                      <span key={i} className="text-sm bg-blue-100 text-blue-800 px-3 py-1 rounded-full min-w-[150px] text-center flex justify-center items-center">
                         {tag}
                       </span>
                     ))}
                   </div>
                   <div className="flex flex-wrap gap-2">
                     {opportunity.type.map((tag, i) => (
-                      <span key={i} className="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full min-w-[120px] text-center flex justify-center items-center">
+                      <span key={i} className="text-sm bg-green-100 text-green-800 px-3 py-1 rounded-full min-w-[150px] text-center flex justify-center items-center">
                         {tag}
                       </span>
                     ))}
@@ -209,7 +229,7 @@ const NewFilter = () => {
                   <div className="flex flex-wrap gap-2">
 
                     {opportunity.major.map((tag, i) => (
-                      <span key={i} className="text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full min-w-[120px] text-center flex justify-center items-center">
+                      <span key={i} className="text-sm bg-purple-100 text-purple-800 px-3 py-1 rounded-full min-w-[150px] text-center flex justify-center items-center">
                         {tag}
                       </span>
                     ))}

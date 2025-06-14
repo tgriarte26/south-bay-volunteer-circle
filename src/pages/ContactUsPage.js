@@ -12,9 +12,8 @@ function ContactUsPage() {
         </p>
       </div>
 
-      {/* Form section */}
       <form
-        action="https://formspree.io/f/xjkryjrb" // Replace with your own Formspree form ID
+        action="https://formspree.io/f/xjkryjrb"
         method="POST"
         className="bg-white shadow-lg rounded-2xl p-8 w-full max-w-3xl border-5 border-[#5372f0]"
       >
