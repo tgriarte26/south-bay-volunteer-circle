@@ -1,38 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useState } from "react";
-
-const allOpportunities = [
-  {
-    id: "volunteer-coach",
-    title: "High School Volunteer Coach",
-    organization: "United States Youth Volleyball League",
-    location: ["Torrance"],
-    address: "1601 Manhattan Beach Blvd, Manhattan Beach, CA 90266",
-    major: ["Sports Medicine"],
-    focusArea: ["Education", "Youth"],
-    type: ["Recurring"],
-    image: "/images/usyvl.png",
-    description: "Help coach youth volleyball and inspire the next generation of athletes!",
-    requirements: "Must be 18 years old",
-    datePosted: "June 3, 2025"
-  },
-  {
-
-    id: "stem-president",
-    title: "Chapter President",
-    organization: "STEMforOthers",
-    location: ["San Jose"],
-    address: "1234 STEM Street, San Jose, CA 95112",
-    major: ["Computer Science"],
-    focusArea: ["Education", "Youth"],
-    type: ["Recurring"],
-    image: "/images/stemforothers.png",
-    description: "Lead and manage a STEMforOthers chapter to encourage youth in STEM careers.",
-    requirements: "Must be 18 years old",
-    datePosted: "June 3, 2025"
-
-  },
-];
+import { allOpportunities } from './AllOpportunities';
 
 const OpportunityDetail = () => {
   const { id } = useParams();
@@ -72,11 +40,18 @@ const OpportunityDetail = () => {
             {/* Left Column: Description */}
             <div className="text-center">
               <h3 className="font-bold text-3xl mb-5 text-[#5372f0] underline decoration-[#5372f0] decoration-2 underline-offset-4" style={{marginTop: '1rem'}}>Description</h3>
-              <p className="text-base font-bold text-gray-700 leading-relaxed" style={{padding: '0 1rem'}}>
+              <p
+                className="text-base font-bold text-gray-700 leading-relaxed"
+                style={{ padding: '0 1rem', whiteSpace: 'pre-line' }}
+              >
                 {opportunity.description}
               </p>
+
               <h3 className="font-bold text-3xl mb-5 text-[#5372f0] underline decoration-[#5372f0] decoration-2 underline-offset-4" style={{marginTop: '1rem'}}>Requirements</h3>
-              <p className="text-base font-bold text-gray-700 leading-relaxed" style={{padding: '0 1rem'}}>
+              <p
+                className="text-base font-bold text-gray-700 leading-relaxed"
+                style={{ padding: '0 1rem', whiteSpace: 'pre-line' }}
+              >
                 {opportunity.requirements}
               </p>
             </div>
@@ -111,6 +86,18 @@ const OpportunityDetail = () => {
                 <h3 className="font-bold text-3xl mb-1 text-[#5372f0] underline decoration-[#5372f0] decoration-2 underline-offset-4"> Opportunity Type </h3>
                 <p className="text-xl font-bold text-gray-700" style={{padding: '0 1rem'}}>
                   {opportunity.type.join(", ")}
+                </p>
+              </div>
+              <div>
+                <h3 className="font-bold text-3xl mb-1 text-[#5372f0] underline decoration-[#5372f0] decoration-2 underline-offset-4"> Website </h3>
+                <p
+                  href={opportunity.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xl font-bold text-gray-700"
+                  style={{ fontSize: '25px', fontWeight: 'bold'}}
+                >
+                  {opportunity.website.replace(/^https?:\/\//, "")}
                 </p>
               </div>
               <div>
