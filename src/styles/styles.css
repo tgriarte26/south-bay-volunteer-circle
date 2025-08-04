@@ -584,6 +584,32 @@ li, a, button {
     text-align: center;
 }
 
+.for-about button {
+    background-color: rgba(255,255,255,1);
+    border: 5px solid #5372f0;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 800;
+    display: inline-block;
+    font-size: 20px;
+    padding: 12px 24px;
+    background-color: #5372f0;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.for-about button:hover {
+    border: 5px solid #5372f0;
+    color: #5372f0;
+    transition: 0.5s ease;
+    text-decoration: none;
+}
+
+.for-about {
+    text-align: center;
+}
+
 .want-to-help button {
     background-color: rgba(83,114,240,1);
     border: 5px solid #5372f0;
