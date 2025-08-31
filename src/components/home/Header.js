@@ -151,7 +151,7 @@ function Header({ openSignIn }) {
             </button>
           )}
 
-          <a className="donate" target="_blank" rel="noreferrer" href="https://www.youtube.com/">
+          <a className="donate" target="_blank" rel="noreferrer" href="https://youtu.be/dQw4w9WgXcQ?si=DoXUAEgobJBZBAiC">
             <button>Donate</button>
           </a>
         </div>

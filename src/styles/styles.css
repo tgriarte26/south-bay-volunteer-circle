@@ -12,6 +12,8 @@ body {
     justify-content: center;
     min-height: 100vh;
     background: #f5f5dc;
+    overflow-x: auto;
+    overflow-y: auto;
 }
 
 .top-header {
